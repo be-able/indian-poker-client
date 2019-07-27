@@ -1,6 +1,6 @@
-package com.beable.poker.client;
+package com.beable.poker.model;
 
-public class Account {
+public class AccountModel {
 	
 	//계정 고유 아이디
 	public String accountID;

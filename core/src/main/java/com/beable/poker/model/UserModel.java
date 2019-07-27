@@ -1,6 +1,6 @@
-package com.beable.poker.core;
+package com.beable.poker.model;
 
-public class User {
+public class UserModel {
 	
 	//유저 아이디
 	public String userID;

@@ -1,5 +1,9 @@
 package com.beable.poker.core;
 
+import com.beable.poker.model.CardModel;
+import com.beable.poker.client.Game;
+import com.beable.poker.model.GameModel;
+
 public interface GameAPI {
 	
 	/**
@@ -9,7 +13,7 @@ public interface GameAPI {
 	 * @param userID    상대방 유저 아이디
 	 * @return 성공시 카드 정보 리턴, 실패시 널 혹은 빈 정보 카드
 	 */
-	Card requestCard(String accountID, String userID);
+	CardModel requestCard(String accountID, String userID);
 	
 	/**
 	 * 게임 전체 상황을 리턴한다

@@ -1,9 +1,9 @@
-package com.beable.poker.core;
+package com.beable.poker.model;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Room {
+public class RoomModel {
 	
 	//방 고유 아이디
 	public String roomID;

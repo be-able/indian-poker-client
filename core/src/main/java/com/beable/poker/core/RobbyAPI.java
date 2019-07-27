@@ -1,5 +1,8 @@
 package com.beable.poker.core;
 
+import com.beable.poker.model.RoomModel;
+import com.beable.poker.model.UserModel;
+
 import java.util.List;
 
 public interface RobbyAPI {
@@ -11,7 +14,7 @@ public interface RobbyAPI {
 	 * @param userID 유저 아이디
 	 * @return 유저 정보
 	 */
-	User requestUser(String userID);
+	UserModel requestUser(String userID);
 	
 	
 	/**
@@ -20,7 +23,7 @@ public interface RobbyAPI {
 	 * @param page 페이지당 10개의 방
 	 * @return 최대 10개의 방 리턴
 	 */
-	List<Room> requestRooms(int page);
+	List<RoomModel> requestRooms(int page);
 	
 	/**
 	 * 방 하나의 정보 요청
@@ -28,7 +31,7 @@ public interface RobbyAPI {
 	 * @param roomID 방 아이디
 	 * @return 방 정보
 	 */
-	Room requestRoom(String roomID);
+	RoomModel requestRoom(String roomID);
 	
 	/**
 	 * 방 검색, 알아서 검색
@@ -36,7 +39,7 @@ public interface RobbyAPI {
 	 * @param roomName 검색할 방 부분 이름
 	 * @return 최대 10개의 방 리턴
 	 */
-	List<Room> requestFindRoom(String roomName);
+	List<RoomModel> requestFindRoom(String roomName);
 	
 	/**
 	 * 방 생성 요청
@@ -72,7 +75,7 @@ public interface RobbyAPI {
 	 *
 	 * @param room 방의 상태가 변했음을 알릴 방
 	 */
-	void notifyRoom(Room room);
+	void notifyRoom(RoomModel room);
 	
 	/**
 	 * 게임 시작 요청
@@ -86,7 +89,7 @@ public interface RobbyAPI {
 	 * 방 안에 유저 아이디가 있으므로
 	 * 함수의 인수로 방 하나만 받아도 전송 가능
 	 */
-	void notifyStartGame(Room room);
+	void notifyStartGame(RoomModel room);
 	
 	
 }

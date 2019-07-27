@@ -1,5 +1,7 @@
 package com.beable.poker.core;
 
+import com.beable.poker.model.AccountModel;
+
 public interface AccountAPI {
 	
 	/**
@@ -9,7 +11,7 @@ public interface AccountAPI {
 	 * @param pwd 패스워드
 	 * @return 성공 : 계정정보, 실패 : null
 	 */
-	Account requestLogin(String id, String pwd);
+	AccountModel requestLogin(String id, String pwd);
 	
 	/**
 	 * 회원가입 요청
