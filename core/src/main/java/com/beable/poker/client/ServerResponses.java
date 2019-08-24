@@ -6,7 +6,7 @@ import com.beable.poker.model.RoomModel;
 import com.beable.poker.model.UserModel;
 import com.beable.poker.utils.BaseReturnModule;
 import com.beable.poker.utils.OnReturnListener;
-import com.sun.istack.internal.NotNull;
+import lombok.NonNull;
 
 public class ServerResponses implements ServerResponseAPI {
 	
@@ -24,7 +24,7 @@ public class ServerResponses implements ServerResponseAPI {
 	private BaseReturnModule<RoomModel> notifyRoomListener = new BaseReturnModule<>();
 	private BaseReturnModule<RoomModel> startGameListener = new BaseReturnModule<>();
 	
-	public void setLoginListener(@NotNull OnReturnListener<AccountModel> loginListener) {
+	public void setLoginListener(@NonNull OnReturnListener<AccountModel> loginListener) {
 		this.loginListener.setListener(loginListener);
 	}
 	

@@ -4,6 +4,7 @@ import com.beable.poker.core.ServerResponseAPI;
 import com.beable.poker.model.AccountModel;
 import com.beable.poker.model.RoomModel;
 import com.beable.poker.model.UserModel;
+import com.beable.poker.model.req.*;
 import com.google.gson.Gson;
 import io.socket.client.IO;
 import io.socket.client.Socket;
@@ -136,52 +137,52 @@ public final class MainSocket {
 		}
 	}
 	
-	public void requestLogin(String id, String pwd) {
-		getSocket().emit("requestLogin", id, pwd);
+	public void requestLogin(LoginRequest request) {
+		getSocket().emit("login", request.toJson());
 	}
 	
-	public void requestCreateAccount(String id, String pwd, String pwd2, String nick) {
-		getSocket().emit("requestCreateAccount", id, pwd, pwd2, nick);
+	public void requestCreateAccount(CreateAccountRequest request) {
+		getSocket().emit("createAccount", request.toJson());
 	}
 	
-	public void requestUpdateProfileImage(String accountID, String base64Image) {
-		getSocket().emit("requestUpdateProfileImage", accountID, base64Image);
+	public void requestUpdateProfileImage(UpdateProfileImageRequest request) {
+		getSocket().emit("updateProfileImage", request.toJson());
 	}
 	
-	public void requestUpdateNickname(String accountID, String nickName) {
-		getSocket().emit("requestUpdateNickname", accountID, nickName);
+	public void requestUpdateNickname(UpdateNicknameRequest request) {
+		getSocket().emit("updateNickname", request.toJson());
 	}
 	
-	public void requestUser(String userID) {
-		getSocket().emit("requestUser", userID);
+	public void requestUser(UserRequest request) {
+		getSocket().emit("user", request.toJson());
 	}
 	
-	public void requestRooms(int page) {
-		getSocket().emit("requestRooms", page);
+	public void requestRooms(RoomListRequest request) {
+		getSocket().emit("rooms", request.toJson());
 	}
 	
-	public void requestRoom(String roomID) {
-		getSocket().emit("requestRoom", roomID);
+	public void requestRoom(RoomRequest request) {
+		getSocket().emit("room", request.toJson());
 	}
 	
-	public void requestFindRoom(String roomName) {
-		getSocket().emit("requestFindRoom", roomName);
+	public void requestFindRoom(FindRoomRequest request) {
+		getSocket().emit("findRoom", request.toJson());
 	}
 	
-	public void requestCreateRoom(String userID, String roomName) {
-		getSocket().emit("requestCreateRoom", userID, roomName);
+	public void requestCreateRoom(CreateRoomRequest request) {
+		getSocket().emit("createRoom", request.toJson());
 	}
 	
-	public void requestJoinRoom(String userID, String roomID) {
-		getSocket().emit("requestJoinRoom", userID, roomID);
+	public void requestJoinRoom(JoinRoomRequest request) {
+		getSocket().emit("joinRoom", request.toJson());
 	}
 	
-	public void requestExitRoom(String userID, String roomID) {
-		getSocket().emit("requestExitRoom", userID, roomID);
+	public void requestExitRoom(ExitRoomRequest request) {
+		getSocket().emit("exitRoom", request.toJson());
 	}
 	
-	public void requestStartRoom(String roomID) {
-		getSocket().emit("requestStartRoom", roomID);
+	public void requestStartRoom(StartRoomRequest request) {
+		getSocket().emit("startRoom", request.toJson());
 	}
 	
 }
