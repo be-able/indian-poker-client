@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.beable.poker.model.req.SocketTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-08-24T05:18:46" hostname="appleui-MBP" time="0.145">
-  <properties/>
-  <testcase name="testSocket" classname="com.beable.poker.model.req.SocketTest" time="0.145"/>
-  <system-out><![CDATA[Message : HTTP/1.1 400 Bad Request
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
