@@ -4,7 +4,6 @@ import com.beable.poker.core.ServerResponseAPI;
 import com.beable.poker.model.AccountModel;
 import com.beable.poker.model.RoomModel;
 import com.beable.poker.model.UserModel;
-import com.beable.poker.utils.ServerInfo;
 import com.google.gson.Gson;
 import io.socket.client.IO;
 import io.socket.client.Socket;
@@ -19,14 +18,17 @@ public final class MainSocket {
 	
 	private ServerResponseAPI responses;
 	
-	public MainSocket(ServerResponseAPI responses) {
+	private final String serverAddress;
+	
+	public MainSocket(final String serverAddress, ServerResponseAPI responses) {
 		this.responses = responses;
+		this.serverAddress = serverAddress;
 	}
 	
 	private Socket getSocket() {
 		if (this.socket == null) {
 			try {
-				this.socket = IO.socket(ServerInfo.ADDRESS);
+				this.socket = IO.socket(serverAddress);
 				Arrays.stream(this.getClass().getMethods())
 						.filter(this::predicateResponse)
 						.forEach(this::socketOn);
@@ -106,7 +108,7 @@ public final class MainSocket {
 	
 	private void responseCreateRoom(Object... args) {
 		if (0 < args.length) {
-			this.responses.createRoom((Boolean) args[0]);
+			this.responses.createRoom((RoomModel) args[0]);
 		}
 	}
 	
@@ -134,13 +136,6 @@ public final class MainSocket {
 		}
 	}
 	
-	
-	public void responseStartRoom(Object... args) {
-		if (0 < args.length) {
-			this.responses.startRoom();
-		}
-	}
-	
 	public void requestLogin(String id, String pwd) {
 		getSocket().emit("requestLogin", id, pwd);
 	}
@@ -153,8 +148,8 @@ public final class MainSocket {
 		getSocket().emit("requestUpdateProfileImage", accountID, base64Image);
 	}
 	
-	public void requestUpdateNickname(String accountID, String base64Image) {
-		getSocket().emit("requestUpdateNickname", accountID, base64Image);
+	public void requestUpdateNickname(String accountID, String nickName) {
+		getSocket().emit("requestUpdateNickname", accountID, nickName);
 	}
 	
 	public void requestUser(String userID) {

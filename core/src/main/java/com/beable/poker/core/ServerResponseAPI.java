@@ -22,15 +22,13 @@ public interface ServerResponseAPI {
 	
 	void findRoom(RoomModel[] model);
 	
-	void createRoom(Boolean model);
+	void createRoom(RoomModel model);
 	
 	void joinRoom(Boolean model);
 	
 	void exitRoom(Boolean model);
 	
 	void notifyRoom(RoomModel model);
-	
-	void startRoom();
 	
 	void startGame(RoomModel model);
 	
