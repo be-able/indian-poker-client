@@ -2,14 +2,14 @@ package com.beable.poker.model.req;
 
 
 import com.google.gson.Gson;
-import lombok.Getter;
+//import lombok.Getter;
 
 import java.util.Random;
 import java.util.UUID;
 
 public class BaseRequest {
 	
-	@Getter
+	//@Getter
 	protected String msgID;
 	
 	public BaseRequest() {
