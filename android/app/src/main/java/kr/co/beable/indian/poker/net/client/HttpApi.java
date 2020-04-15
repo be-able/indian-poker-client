@@ -13,8 +13,8 @@ import kr.co.beable.indian.poker.net.utils.HttpApiUtils;
 
 public class HttpApi {
 	
-	
 	public static SignInData signIn(@NonNull SignInRequest req) {
+		
 		String request = new Gson().toJson(req.toDto());
 		String response = HttpApiUtils.post(req.getUrl(), request);
 		try {
@@ -25,6 +25,7 @@ public class HttpApi {
 	}
 	
 	public static SignUpData signUp(@NonNull SignUpRequest req) {
+		
 		String request = new Gson().toJson(req.toDto());
 		String response = HttpApiUtils.post(req.getUrl(), request);
 		try {

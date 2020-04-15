@@ -1,7 +1,5 @@
 package kr.co.beable.indian.poker.net.client;
 
-import android.database.Observable;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
@@ -9,6 +7,9 @@ import kr.co.beable.indian.poker.net.model.data.SignInData;
 import kr.co.beable.indian.poker.net.model.data.SignUpData;
 import kr.co.beable.indian.poker.net.model.req.SignInRequest;
 import kr.co.beable.indian.poker.net.model.req.SignUpRequest;
+import rx.Observable;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
 
 public class HttpProvider {
 	
