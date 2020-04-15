@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">인디언포커</string>
+    <string name="button_exit">나가기</string>
+    <string name="button_next">다음</string>
+</resources>

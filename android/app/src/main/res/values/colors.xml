@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#222222</color>
+    <color name="colorPrimaryDark">#222222</color>
+    <color name="colorAccent">#999999</color>
+    <color name="colorBackground">#222222</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="color_button_default_idle_solid">#555555</color>
+    <color name="color_button_default_idle_stroke">#999999</color>
+    <color name="color_button_default_pressed_solid">#888888</color>
+    <color name="color_button_default_pressed_stroke">#aaaaaa</color>
+    <color name="color_button_default_focused_solid">#666666</color>
+    <color name="color_button_default_focused_stroke">#999999</color>
+    <color name="color_button_default_text">#dddddd</color>
+
+    <color name="color_edit_text_default_idle_solid">#000000</color>
+    <color name="color_edit_text_default_idle_stroke">#666666</color>
+    <color name="color_edit_text_default_pressed_solid">#000000</color>
+    <color name="color_edit_text_default_pressed_stroke">#dd7722</color>
+    <color name="color_edit_text_default_focused_solid">#000000</color>
+    <color name="color_edit_text_default_focused_stroke">#dd7722</color>
+    <color name="color_edit_text_default_text">#dddddd</color>
+
+    <color name="color_edit_text_control_normal">#666666</color>
+    <color name="color_edit_text_control_active">#dd7722</color>
+    <color name="color_edit_text_cursor">#dd7722</color>
+    <color name="color_edit_text_color">#ffffff</color>
+    <color name="color_edit_text_hint">#777777</color>
+    <color name="color_edit_text_highlight">#777777</color>
+
+</resources>

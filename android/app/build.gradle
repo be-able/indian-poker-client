@@ -1,0 +1,74 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.0"
+
+    defaultConfig {
+        applicationId "kr.co.beable.indian.client"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    configurations.all {
+        exclude module: 'okhttp-ws'
+    }
+}
+
+dependencies {
+
+    //file tree
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    // base
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+
+    // gson
+    implementation 'com.google.code.gson:gson:2.8.6'
+
+    // socket.io, websocket
+    implementation 'io.socket:socket.io-client:0.7.0'
+    implementation 'javax.websocket:javax.websocket-api:1.1'
+
+    // spring, websocket
+    implementation 'org.springframework:spring-jms:2.5.6.SEC01'
+    implementation 'org.springframework:spring-websocket:5.2.4.RELEASE'
+    implementation 'org.springframework:spring-messaging:5.2.4.RELEASE'
+    implementation 'org.springframework.boot:spring-boot-starter:2.2.6.RELEASE'
+    implementation 'org.springframework.boot:spring-boot-starter-websocket:2.2.5.RELEASE'
+
+    // lombok
+    compileOnly 'org.projectlombok:lombok:1.18.12'
+    annotationProcessor 'org.projectlombok:lombok:1.18.12'
+    testCompileOnly 'org.projectlombok:lombok:1.18.12'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.12'
+
+    //test
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'org.spockframework:spock-core:1.1-groovy-2.4'
+    testImplementation 'org.spockframework:spock-spring:1.1-groovy-2.4'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+}

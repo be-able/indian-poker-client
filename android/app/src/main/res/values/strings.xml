@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">poker</string>
+    <string name="button_exit">exit</string>
+    <string name="button_next">next</string>
+</resources>
